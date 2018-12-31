@@ -96,12 +96,17 @@ public class TimeText : MonoBehaviour {
 
     void Update () {
         //startTime += 1 * Time.deltaTime;
+
+        //開始ボタンを押してからの計測時間
         startTime = Time.time - pushTime;
         startTimeText.text = startTime.ToString("f2");
 
+        //開始ボタンを押してから指定目標時間の半分に達したか判別
         if (targetTime / 2 < startTime)
+            //計測時間を非表示にする
             startTimeText.enabled = false;
 
+        //両プレイヤーがストップボタンを押したか判別
         if (isTapP1 == true && isTapP2 == true && isCheck == true)
         {
             audio.Stop();
@@ -112,7 +117,10 @@ public class TimeText : MonoBehaviour {
             count++;
         }
 
+        //ゲーム終了後，一定時間たったか判別
         if (count == 160)
+
+            //修了の効果音を流したか判別
             if (isEndSe == true)
             {
                 isEndSe = false;
@@ -120,16 +128,20 @@ public class TimeText : MonoBehaviour {
                 countinuePanel.SetActive(true);
             }
     }
-    //audio.PlayOneShot(SceneMoveSe);
 
+    /// <summary>
+    /// 計測終了処理
+    /// </summary>
+    /// <param name="p"></param>
     public void timeStop(int p)
     {
         audio.PlayOneShot(stopButtonSe);
+
+        //ストップボタンを押したプレイヤーと初めに押したかを判別
         if (p == 1 && isTapP1 == false)
         {
             stopTime1Text.enabled = true;
             stopTime1 = Time.time - pushTime;
-            //stopTime1Text.text = stopTime1.ToString("f2");
             stopTime1Text.text = "STOP!";
             isTapP1 = true;
 
@@ -138,12 +150,14 @@ public class TimeText : MonoBehaviour {
         {
             stopTime2Text.enabled = true;
             stopTime2 = Time.time - pushTime;
-            //stopTime2Text.text = stopTime2.ToString("f2");
             stopTime2Text.text = "STOP!";
             isTapP2 = true;
         }
     }
 
+    /// <summary>
+    /// 両プレイヤーの計測時間と指定目標時間を比較し，勝敗をつける
+    /// </summary>
     public void checkTime()
     {
         audio.PlayOneShot(gameSet);
@@ -154,13 +168,14 @@ public class TimeText : MonoBehaviour {
         differenceValueP1 = Math.Abs(targetTime - stopTime1);
         differenceValueP2 = Math.Abs(targetTime - stopTime2);
 
-        if(differenceValueP1 < differenceValueP2)
-        {//1Pの勝利
+        //どのプレイヤーが勝利したか判別
+        if (differenceValueP1 < differenceValueP2)
+        {
             Debug.Log("1pのかち！");
             win1pText.enabled = true;
         }
         else if (differenceValueP1 > differenceValueP2)
-        {//2Pの勝利
+        {
             Debug.Log("2pの勝ち");
             win2pText.enabled = true;
         }
@@ -171,9 +186,11 @@ public class TimeText : MonoBehaviour {
 
         startTimeText.enabled = false;
         isCheck = false;
-        //終了，もしくは再開するパネルの表示
     }
 
+    /// <summary>
+    /// 計測開始処理
+    /// </summary>
     public void pushStartButton()
     {
         audio.PlayOneShot(startButtonSe);
@@ -184,12 +201,18 @@ public class TimeText : MonoBehaviour {
         startTimeText.enabled = true;
         startPanel.SetActive(false);
     }
-
+    
+    /// <summary>
+    /// ゲーム再開処理
+    /// </summary>
     public void countinueGame()
     {
         SceneManager.LoadScene("GameScene");
     }
 
+    /// <summary>
+    /// ゲーム終了
+    /// </summary>
     public void gameEnd()
     {
         SceneManager.LoadScene("TitleScene");
