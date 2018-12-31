@@ -5,40 +5,68 @@ using System;
 using UnityEngine.SceneManagement;
 
 public class TimeText : MonoBehaviour {
+
+    /// <summary>オウディオソース </summary>
     private new AudioSource audio;
 
+    /// <summary>開始ボタンプッシュ音</summary>
     public AudioClip startButtonSe;
+    /// <summary>ストップボタンプッシュ音</summary>
     public AudioClip stopButtonSe;
+    /// <summary>秒針の音</summary>
     public AudioClip clockSe;
+    /// <summary>ゲーム終了時音</summary>
     public AudioClip gameSet;
+    /// <summary>コンテニューパネル表示音</summary>
     public AudioClip continuePanelSe;
 
+    /// <summary>指定目標時間</summary>
     private int targetTime;
     int count = 0;
 
+    /// <summary>計測開始時間</summary>
     public float startTime;
+    /// <summary>シーン移行から開始ボタンを押すまでの時間</summary>
     public float pushTime;
+    /// <summary>プレイヤー1の計測時間</summary>
     public float stopTime1;
+    /// <summary>プレイヤー2の計測時間</summary>
     public float stopTime2;
 
+    /// <summary>プレイヤー1の目標時間と計測時間の差の値</summary>
     private float differenceValueP1;
+    /// <summary>プレイヤー2の目標時間と計測時間の差の値</summary>
     private float differenceValueP2;
 
+    /// <summary>目標計測時間のテキスト</summary>
     public Text targetTimeText;
+    /// <summary>表示用目標計測時間のテキスト</summary>
     public Text targetTimeText_G;
+    /// <summary>計測開始時間テキスト</summary>
     public Text startTimeText;
+    /// <summary>プレイヤー1の計測時間テキスト</summary>
     public Text stopTime1Text;
+    /// <summary>プレイヤー2の計測時間テキスト</summary>
     public Text stopTime2Text;
+    /// <summary>プレイヤー１の勝敗テキスト</summary>
     public Text win1pText;
+    /// <summary>プレイヤー2の勝敗テキスト</summary>
     public Text win2pText;
 
+    /// <summary>ゲーム開始待機パネル</summary>
     public GameObject startPanel;
+    /// <summary>ゲームを続けるか促すパネル</summary>
     public GameObject countinuePanel;
 
+    /// <summary></summary>
     private bool isTapP1;
+    /// <summary></summary>
     private bool isTapP2;
+    /// <summary></summary>
     private bool isCheck;
+    /// <summary></summary>
     private bool isBit;
+    /// <summary></summary>
     private bool isEndSe;
 
     void Start () {
