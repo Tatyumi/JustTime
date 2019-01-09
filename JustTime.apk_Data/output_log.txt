@@ -19,19 +19,39 @@ Platform assembly: D:\CreatGame\JustTime\JustTime.apk_Data\Managed\UnityEngine.T
 Loading D:\CreatGame\JustTime\JustTime.apk_Data\Managed\UnityEngine.Timeline.dll into Unity Child Domain
 Platform assembly: D:\CreatGame\JustTime\JustTime.apk_Data\Managed\System.dll (this message is harmless)
 Platform assembly: D:\CreatGame\JustTime\JustTime.apk_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.024 seconds
+- Completed reload, in  0.051 seconds
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 3.812954 ms
+UnloadTime: 8.461606 ms
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.254687 ms
+UnloadTime: 7.973687 ms
 
 Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 370.
-Total: 0.332779 ms (FindLiveObjects: 0.026843 ms CreateObjectMapping: 0.017764 ms MarkObjects: 0.283435 ms  DeleteObjects: 0.004342 ms)
+Total: 0.500156 ms (FindLiveObjects: 0.035133 ms CreateObjectMapping: 0.019343 ms MarkObjects: 0.435811 ms  DeleteObjects: 0.008289 ms)
+
+チェックタイム！
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+2pの勝ち
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.184977 ms
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 279.
+Total: 4.001252 ms (FindLiveObjects: 0.045002 ms CreateObjectMapping: 0.036712 ms MarkObjects: 1.141241 ms  DeleteObjects: 2.776322 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.442127 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 370.
+Total: 0.562922 ms (FindLiveObjects: 0.058029 ms CreateObjectMapping: 0.023290 ms MarkObjects: 0.473707 ms  DeleteObjects: 0.006710 ms)
 
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: 1b9c -> priority: 1 
-  Thread -> id: 1298 -> priority: 1 
-  Thread -> id: 2ba8 -> priority: 1 
-  Thread -> id: 53b4 -> priority: 1 
+  Thread -> id: 1398 -> priority: 1 
+  Thread -> id: 13e4 -> priority: 1 
+  Thread -> id: 3830 -> priority: 1 
+  Thread -> id: 391c -> priority: 1 
