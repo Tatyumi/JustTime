@@ -58,14 +58,12 @@ public class TimeText : MonoBehaviour {
     /// <summary>ゲームを続けるか促すパネル</summary>
     public GameObject countinuePanel;
 
-    /// <summary></summary>
+    /// <summary>プレイヤー1がストップボタンを一度目に押したかを判別するフラグ</summary>
     private bool isTapP1;
-    /// <summary></summary>
+    /// <summary>プレイヤー2がストップボタンを一度目に押したかを判別するフラグ</summary>
     private bool isTapP2;
     /// <summary></summary>
     private bool isCheck;
-    /// <summary></summary>
-    private bool isBit;
     /// <summary></summary>
     private bool isEndSe;
 
@@ -95,8 +93,6 @@ public class TimeText : MonoBehaviour {
     }
 
     void Update () {
-        //startTime += 1 * Time.deltaTime;
-
         //開始ボタンを押してからの計測時間
         startTime = Time.time - pushTime;
         startTimeText.text = startTime.ToString("f2");
@@ -110,7 +106,7 @@ public class TimeText : MonoBehaviour {
         if (isTapP1 == true && isTapP2 == true && isCheck == true)
         {
             audio.Stop();
-            checkTime();
+            CheckTime();
         }
         else if (isCheck == false)
         {
@@ -133,7 +129,7 @@ public class TimeText : MonoBehaviour {
     /// 計測終了処理
     /// </summary>
     /// <param name="p"></param>
-    public void timeStop(int p)
+    public void TimeStop(int p)
     {
         audio.PlayOneShot(stopButtonSe);
 
@@ -158,13 +154,12 @@ public class TimeText : MonoBehaviour {
     /// <summary>
     /// 両プレイヤーの計測時間と指定目標時間を比較し，勝敗をつける
     /// </summary>
-    public void checkTime()
+    public void CheckTime()
     {
         audio.PlayOneShot(gameSet);
 
         stopTime1Text.text = stopTime1.ToString("f2");
         stopTime2Text.text = stopTime2.ToString("f2");
-        Debug.Log("チェックタイム！");
         differenceValueP1 = Math.Abs(targetTime - stopTime1);
         differenceValueP2 = Math.Abs(targetTime - stopTime2);
 
@@ -191,7 +186,7 @@ public class TimeText : MonoBehaviour {
     /// <summary>
     /// 計測開始処理
     /// </summary>
-    public void pushStartButton()
+    public void PushStartButton()
     {
         audio.PlayOneShot(startButtonSe);
         audio.PlayOneShot(clockSe);
@@ -203,17 +198,17 @@ public class TimeText : MonoBehaviour {
     }
     
     /// <summary>
-    /// ゲーム再開処理
+    /// ゲームシーンに遷移
     /// </summary>
-    public void countinueGame()
+    public void MoveGameScene()
     {
         SceneManager.LoadScene("GameScene");
     }
 
     /// <summary>
-    /// ゲーム終了
+    /// タイトルシーンに遷移
     /// </summary>
-    public void gameEnd()
+    public void MoveTitleScene()
     {
         SceneManager.LoadScene("TitleScene");
     }

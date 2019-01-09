@@ -765,7 +765,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 346793390}
-        m_MethodName: gameEnd
+        m_MethodName: MoveTitleScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -961,7 +961,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 346793390}
-        m_MethodName: countinueGame
+        m_MethodName: MoveGameScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1383,7 +1383,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 346793390}
-        m_MethodName: timeStop
+        m_MethodName: TimeStop
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1643,7 +1643,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 346793390}
-        m_MethodName: pushStartButton
+        m_MethodName: PushStartButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2016,7 +2016,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 346793390}
-        m_MethodName: timeStop
+        m_MethodName: TimeStop
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
