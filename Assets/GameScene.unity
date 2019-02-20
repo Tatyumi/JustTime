@@ -281,24 +281,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cd490f5d572b80429762f5abc3174a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startButtonSe: {fileID: 8300000, guid: da654f6575eb9114ebb148436fac8327, type: 3}
-  stopButtonSe: {fileID: 8300000, guid: 0ede1f0565c117147a77912a3b4687a6, type: 3}
-  clockSe: {fileID: 8300000, guid: 78cd5146dfd1aee47a517f228aec1eef, type: 3}
-  gameSet: {fileID: 8300000, guid: 29f1302f6786d9943bd36a25c421bcf5, type: 3}
-  continuePanelSe: {fileID: 8300000, guid: 2676af50c405d164fbd45aeb0a1034b9, type: 3}
-  startTime: 0
-  pushTime: 0
-  stopTime1: 0
-  stopTime2: 0
-  targetTimeText: {fileID: 966161423}
-  targetTimeText_G: {fileID: 1908073219}
-  startTimeText: {fileID: 559535486}
-  stopTime1Text: {fileID: 588543609}
-  stopTime2Text: {fileID: 2003818382}
-  win1pText: {fileID: 1195013954}
-  win2pText: {fileID: 646216121}
-  startPanel: {fileID: 1331606972}
-  countinuePanel: {fileID: 118486265}
+  StartButtonSE: {fileID: 8300000, guid: da654f6575eb9114ebb148436fac8327, type: 3}
+  StopButtonSE: {fileID: 8300000, guid: 0ede1f0565c117147a77912a3b4687a6, type: 3}
+  ClockSE: {fileID: 8300000, guid: 78cd5146dfd1aee47a517f228aec1eef, type: 3}
+  GameSetSE: {fileID: 8300000, guid: 29f1302f6786d9943bd36a25c421bcf5, type: 3}
+  ContinuePanelSE: {fileID: 8300000, guid: 2676af50c405d164fbd45aeb0a1034b9, type: 3}
+  StartTime: 0
+  PushTime: 0
+  StopTime1: 0
+  StopTime2: 0
+  TargetTimeText: {fileID: 966161423}
+  TargetTimeText_G: {fileID: 1908073219}
+  StartTimeText: {fileID: 559535486}
+  StopTime1Text: {fileID: 588543609}
+  StopTime2Text: {fileID: 2003818382}
+  Win1pText: {fileID: 1195013954}
+  Win2pText: {fileID: 646216121}
+  StartPanel: {fileID: 1331606972}
+  CountinuePanel: {fileID: 118486265}
 --- !u!4 &346793391
 Transform:
   m_ObjectHideFlags: 0
