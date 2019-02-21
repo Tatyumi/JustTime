@@ -5,20 +5,7 @@ using System;
 using UnityEngine.SceneManagement;
 
 public class GameDirector : MonoBehaviour {
-
-    /// <summary>オウディオソース </summary>
-    private new AudioSource audio;
-    /// <summary>開始ボタンプッシュ音</summary>
-    public AudioClip StartButtonSE;
-    /// <summary>ストップボタンプッシュ音</summary>
-    public AudioClip StopButtonSE;
-    /// <summary>秒針の音</summary>
-    public AudioClip ClockSE;
-    /// <summary>ゲーム終了時音</summary>
-    public AudioClip GameSetSE;
-    /// <summary>コンテニューパネル表示音</summary>
-    public AudioClip ContinuePanelSE;
-
+    
     /// <summary>指定目標時間</summary>
     private int targetTime;
     int count = 0;
@@ -65,9 +52,14 @@ public class GameDirector : MonoBehaviour {
     private bool isCheck;
     /// <summary></summary>
     private bool isEndSe;
+    /// <summary>オーディオマネージャー</summary>
+    public GameObject AudioManager;
+    /// <summary></summary>
+    private AudioManager audioManager;
+    
 
-    void Start () {
-        audio = gameObject.GetComponent<AudioSource>();
+    void Start ()
+    {
         StartPanel.SetActive(true);
         CountinuePanel.SetActive(false);
         targetTime = UnityEngine.Random.Range(5,11);
@@ -89,6 +81,7 @@ public class GameDirector : MonoBehaviour {
         isCheck = true;
         isEndSe = true;
 
+        audioManager = AudioManager.GetComponent<AudioManager>();
     }
 
     void Update () {
@@ -104,7 +97,7 @@ public class GameDirector : MonoBehaviour {
         //両プレイヤーがストップボタンを押したか判別
         if (isTapP1 == true && isTapP2 == true && isCheck == true)
         {
-            audio.Stop();
+            audioManager.StopSE();
             CheckTime();
         }
         else if (isCheck == false)
@@ -119,7 +112,7 @@ public class GameDirector : MonoBehaviour {
             if (isEndSe == true)
             {
                 isEndSe = false;
-                audio.PlayOneShot(ContinuePanelSE);
+                audioManager.PlaySE("ContinuePanelSE");
                 CountinuePanel.SetActive(true);
             }
     }
@@ -130,8 +123,6 @@ public class GameDirector : MonoBehaviour {
     /// <param name="p"></param>
     public void TimeStop(int p)
     {
-        audio.PlayOneShot(StopButtonSE);
-
         //ストップボタンを押したプレイヤーと初めに押したかを判別
         if (p == 1 && isTapP1 == false)
         {
@@ -139,6 +130,7 @@ public class GameDirector : MonoBehaviour {
             StopTime1 = Time.time - PushTime;
             StopTime1Text.text = "STOP!";
             isTapP1 = true;
+            audioManager.PlaySE("StopButtonSE");
 
         }
         else if (p == 2 && isTapP2 == false)
@@ -147,6 +139,7 @@ public class GameDirector : MonoBehaviour {
             StopTime2 = Time.time - PushTime;
             StopTime2Text.text = "STOP!";
             isTapP2 = true;
+            audioManager.PlaySE("StopButtonSE");
         }
     }
 
@@ -155,8 +148,7 @@ public class GameDirector : MonoBehaviour {
     /// </summary>
     public void CheckTime()
     {
-        audio.PlayOneShot(GameSetSE);
-
+        audioManager.PlaySE("GameSetSE");
         StopTime1Text.text = StopTime1.ToString("f2");
         StopTime2Text.text = StopTime2.ToString("f2");
         differenceValueP1 = Math.Abs(targetTime - StopTime1);
@@ -187,8 +179,8 @@ public class GameDirector : MonoBehaviour {
     /// </summary>
     public void PushStartButton()
     {
-        audio.PlayOneShot(StartButtonSE);
-        audio.PlayOneShot(ClockSE);
+        audioManager.PlaySE("StartButtonSE");
+        audioManager.PlaySE("ClockSE");
 
         PushTime = Time.time;
         TargetTimeText_G.enabled = true;
