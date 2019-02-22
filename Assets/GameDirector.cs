@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System;
 using UnityEngine.SceneManagement;
+using Common;
 
 public class GameDirector : MonoBehaviour {
     
@@ -56,7 +57,11 @@ public class GameDirector : MonoBehaviour {
     public GameObject AudioManager;
     /// <summary></summary>
     private AudioManager audioManager;
-    
+
+    private void Awake()
+    {
+        audioManager = AudioManager.GetComponent<AudioManager>();
+    }
 
     void Start ()
     {
@@ -81,7 +86,6 @@ public class GameDirector : MonoBehaviour {
         isCheck = true;
         isEndSe = true;
 
-        audioManager = AudioManager.GetComponent<AudioManager>();
     }
 
     void Update () {
@@ -112,7 +116,7 @@ public class GameDirector : MonoBehaviour {
             if (isEndSe == true)
             {
                 isEndSe = false;
-                audioManager.PlaySE("ContinuePanelSE");
+                audioManager.PlaySE(Constans.CONTINUE_PANEL_SE);
                 CountinuePanel.SetActive(true);
             }
     }
@@ -130,7 +134,7 @@ public class GameDirector : MonoBehaviour {
             StopTime1 = Time.time - PushTime;
             StopTime1Text.text = "STOP!";
             isTapP1 = true;
-            audioManager.PlaySE("StopButtonSE");
+            audioManager.PlaySE(Constans.STOP_BUTTON_SE);
 
         }
         else if (p == 2 && isTapP2 == false)
@@ -139,7 +143,7 @@ public class GameDirector : MonoBehaviour {
             StopTime2 = Time.time - PushTime;
             StopTime2Text.text = "STOP!";
             isTapP2 = true;
-            audioManager.PlaySE("StopButtonSE");
+            audioManager.PlaySE(Constans.STOP_BUTTON_SE);
         }
     }
 
@@ -148,7 +152,7 @@ public class GameDirector : MonoBehaviour {
     /// </summary>
     public void CheckTime()
     {
-        audioManager.PlaySE("GameSetSE");
+        audioManager.PlaySE(Constans.GAME_SET_SE);
         StopTime1Text.text = StopTime1.ToString("f2");
         StopTime2Text.text = StopTime2.ToString("f2");
         differenceValueP1 = Math.Abs(targetTime - StopTime1);
@@ -179,8 +183,8 @@ public class GameDirector : MonoBehaviour {
     /// </summary>
     public void PushStartButton()
     {
-        audioManager.PlaySE("StartButtonSE");
-        audioManager.PlaySE("ClockSE");
+        audioManager.PlaySE(Constans.START_BUTTON_SE);
+        audioManager.PlaySE(Constans.CLOCK_SE   );
 
         PushTime = Time.time;
         TargetTimeText_G.enabled = true;
