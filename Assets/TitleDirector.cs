@@ -1,15 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using Common;
 
-public class TitleDirector : MonoBehaviour {
+public class TitleDirector : MonoBehaviour
+{
     
-	// Update is called once per frame
-	void Update () {
+    void Update()
+    {
 
-        //タップされた場合
-        if (Input.GetMouseButtonDown(0)) { 
-            SceneManager.LoadScene("GameScene");
+        // 画面がタップされた場合
+        if (Input.GetMouseButtonDown(0))
+        {
+            // ゲームシーンに移動
+            SceneManager.LoadScene(Constans.GAME_SCENE);
         }
     }
 }
