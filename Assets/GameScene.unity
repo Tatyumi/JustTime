@@ -1313,7 +1313,7 @@ GameObject:
   - component: {fileID: 1279120601}
   - component: {fileID: 1279120600}
   m_Layer: 5
-  m_Name: Button
+  m_Name: 1pStopButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1379,7 +1379,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 346793390}
-        m_MethodName: TimeStop
+        m_MethodName: StopClock
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1765,7 +1765,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 346793390}
-        m_MethodName: PushStartButton
+        m_MethodName: StartClock
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2072,7 +2072,7 @@ GameObject:
   - component: {fileID: 1794066914}
   - component: {fileID: 1794066913}
   m_Layer: 5
-  m_Name: Button2
+  m_Name: 2pStopButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2138,7 +2138,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 346793390}
-        m_MethodName: TimeStop
+        m_MethodName: StopClock
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
