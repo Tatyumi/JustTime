@@ -17,5 +17,10 @@ namespace Common
         public static string START_BUTTON_SE = "StartButtonSE";
         /// <summary>停止ボタンプッシュ音の音声ファイル名</summary>
         public static string STOP_BUTTON_SE = "StopButtonSE";
+
+        /// <summary>タイトルシーン名</summary>
+        public static string TITLE_SCENE = "TitleScene";
+        /// <summary>ゲームシーン名</summary>
+        public static string GAME_SCENE = "GameScene";
     }
 }
