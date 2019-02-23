@@ -5,8 +5,9 @@ using System;
 using UnityEngine.SceneManagement;
 using Common;
 
-public class GameDirector : MonoBehaviour {
-    
+public class GameDirector : MonoBehaviour
+{
+
     /// <summary>指定目標時間</summary>
     private int targetTime;
     int count = 0;
@@ -63,13 +64,13 @@ public class GameDirector : MonoBehaviour {
         audioManager = AudioManager.GetComponent<AudioManager>();
     }
 
-    void Start ()
+    void Start()
     {
         StartPanel.SetActive(true);
         CountinuePanel.SetActive(false);
-        targetTime = UnityEngine.Random.Range(5,11);
-        TargetTimeText.text = "TargetTime\n"+targetTime.ToString()+"s";
-        TargetTimeText_G.text = targetTime.ToString()+"s";
+        targetTime = UnityEngine.Random.Range(5, 11);
+        TargetTimeText.text = "TargetTime\n" + targetTime.ToString() + "s";
+        TargetTimeText_G.text = targetTime.ToString() + "s";
         StartTime = 0;
         StopTime1 = 0;
         StopTime2 = 0;
@@ -88,7 +89,8 @@ public class GameDirector : MonoBehaviour {
 
     }
 
-    void Update () {
+    void Update()
+    {
         //開始ボタンを押してからの計測時間
         StartTime = Time.time - PushTime;
         StartTimeText.text = StartTime.ToString("f2");
@@ -125,7 +127,7 @@ public class GameDirector : MonoBehaviour {
     /// 計測終了処理
     /// </summary>
     /// <param name="p"></param>
-    public void TimeStop(int p)
+    public void StopClock(int p)
     {
         //ストップボタンを押したプレイヤーと初めに押したかを判別
         if (p == 1 && isTapP1 == false)
@@ -155,6 +157,8 @@ public class GameDirector : MonoBehaviour {
         audioManager.PlaySE(Constans.GAME_SET_SE);
         StopTime1Text.text = StopTime1.ToString("f2");
         StopTime2Text.text = StopTime2.ToString("f2");
+
+        // 目標時間と計測時間の差分を取得
         differenceValueP1 = Math.Abs(targetTime - StopTime1);
         differenceValueP2 = Math.Abs(targetTime - StopTime2);
 
@@ -181,23 +185,23 @@ public class GameDirector : MonoBehaviour {
     /// <summary>
     /// 計測開始処理
     /// </summary>
-    public void PushStartButton()
+    public void StartClock()
     {
         audioManager.PlaySE(Constans.START_BUTTON_SE);
-        audioManager.PlaySE(Constans.CLOCK_SE   );
+        audioManager.PlaySE(Constans.CLOCK_SE);
 
         PushTime = Time.time;
         TargetTimeText_G.enabled = true;
         StartTimeText.enabled = true;
         StartPanel.SetActive(false);
     }
-    
+
     /// <summary>
     /// ゲームシーンに遷移
     /// </summary>
     public void MoveGameScene()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene(Constans.GAME_SCENE);
     }
 
     /// <summary>
@@ -205,7 +209,7 @@ public class GameDirector : MonoBehaviour {
     /// </summary>
     public void MoveTitleScene()
     {
-        SceneManager.LoadScene("TitleScene");
+        SceneManager.LoadScene(Constans.TITLE_SCENE);
     }
 
 }
