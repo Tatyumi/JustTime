@@ -2,7 +2,6 @@
 using UnityEngine.UI;
 using System.Collections;
 using System;
-using UnityEngine.SceneManagement;
 using Common;
 
 public class TimeDirector : MonoBehaviour
@@ -53,6 +52,7 @@ public class TimeDirector : MonoBehaviour
     /// <summary>オーディオマネージャー</summary>
     private AudioManager audioManager;
 
+    //ゲーム終了経過時間
     int count = 0;
 
     private void Awake()
@@ -110,7 +110,7 @@ public class TimeDirector : MonoBehaviour
         }
 
         // ゲーム終了後，一定時間たったか判別
-        if (count == 160)
+        if (count == 100)
 
             // 終了の効果音を流したか判別
             if (isEndSE == true)
@@ -138,7 +138,7 @@ public class TimeDirector : MonoBehaviour
     /// <summary>
     /// 計測終了処理
     /// </summary>
-    /// <param name="p">プレイヤー</param>
+    /// <param name="p">プレイヤー番号</param>
     public void StopClock(int p)
     {
         //ストップボタンを押したプレイヤーと初めに押したかを判別
@@ -177,12 +177,10 @@ public class TimeDirector : MonoBehaviour
         //どのプレイヤーが勝利したか判別
         if (differenceValueP1 < differenceValueP2)
         {
-            Debug.Log("1pのかち！");
             Win1pText.enabled = true;
         }
         else if (differenceValueP1 > differenceValueP2)
         {
-            Debug.Log("2pの勝ち");
             Win2pText.enabled = true;
         }
         else
@@ -194,19 +192,4 @@ public class TimeDirector : MonoBehaviour
         isCheck = false;
     }
 
-    /// <summary>
-    /// ゲームシーンに遷移
-    /// </summary>
-    public void MoveGameScene()
-    {
-        SceneManager.LoadScene(Constans.GAME_SCENE);
-    }
-
-    /// <summary>
-    /// タイトルシーンに遷移
-    /// </summary>
-    public void MoveTitleScene()
-    {
-        SceneManager.LoadScene(Constans.TITLE_SCENE);
-    }
 }

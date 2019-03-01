@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 118486267}
   - component: {fileID: 118486266}
   m_Layer: 5
-  m_Name: countinuetPanel
+  m_Name: CountinuetPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -283,8 +283,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartTime: 0
   PushTime: 0
-  StopTime1: 0
-  StopTime2: 0
+  StopTimeP1: 0
+  StopTimeP2: 0
   TargetTimeText: {fileID: 966161423}
   TargetTimeText_G: {fileID: 1908073219}
   StartTimeText: {fileID: 559535486}
@@ -388,6 +388,46 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!1 &415235718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 415235720}
+  - component: {fileID: 415235719}
+  m_Layer: 0
+  m_Name: GameDirector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &415235719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 415235718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 952fabae2560d4f43b5593e3d66d60be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &415235720
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 415235718}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 920.5213, y: 80.81093, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &559535485
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,7 +736,7 @@ GameObject:
   - component: {fileID: 978471457}
   - component: {fileID: 978471456}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: NoButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -760,7 +800,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 346793390}
+      - m_Target: {fileID: 415235719}
         m_MethodName: MoveTitleScene
         m_Mode: 1
         m_Arguments:
@@ -892,7 +932,7 @@ GameObject:
   - component: {fileID: 1114224389}
   - component: {fileID: 1114224388}
   m_Layer: 5
-  m_Name: Button
+  m_Name: YesButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -956,7 +996,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 346793390}
+      - m_Target: {fileID: 415235719}
         m_MethodName: MoveGameScene
         m_Mode: 1
         m_Arguments:
