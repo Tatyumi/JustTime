@@ -5,7 +5,7 @@ using System;
 using UnityEngine.SceneManagement;
 using Common;
 
-public class GameDirector : MonoBehaviour
+public class TimeDirector : MonoBehaviour
 {
     /// <summary>計測開始時間</summary>
     public float StartTime;
@@ -46,11 +46,11 @@ public class GameDirector : MonoBehaviour
     private bool isTapP1;
     /// <summary>プレイヤー2がストップボタンを一度目に押したかを判別するフラグ</summary>
     private bool isTapP2;
-    /// <summary></summary>
+    /// <summary>両者ともにストップボタンを押したか確認フラグ</summary>
     private bool isCheck;
-    /// <summary></summary>
+    /// <summary>終了SEが流れたか判別するフラグ</summary>
     private bool isEndSE;
-    /// <summary></summary>
+    /// <summary>オーディオマネージャー</summary>
     private AudioManager audioManager;
 
     int count = 0;
@@ -87,18 +87,18 @@ public class GameDirector : MonoBehaviour
 
     void Update()
     {
-        //開始ボタンを押してからの計測時間
+        // 開始ボタンを押してからの計測時間
         StartTime = Time.time - PushTime;
         StartTimeText.text = StartTime.ToString("f2");
 
-        //開始ボタンを押してから指定目標時間の半分に達したか判別
+        // 開始ボタンを押してから指定目標時間の半分に達したか判別
         if (targetTime / 2 < StartTime)
         {
-            //計測時間を非表示にする
+            // 計測時間を非表示にする
             StartTimeText.enabled = false;
         }
 
-        //両プレイヤーがストップボタンを押したか判別
+        // 両プレイヤーがストップボタンを押したか判別
         if (isTapP1 == true && isTapP2 == true && isCheck == true)
         {
             audioManager.StopSE();
@@ -109,10 +109,10 @@ public class GameDirector : MonoBehaviour
             count++;
         }
 
-        //ゲーム終了後，一定時間たったか判別
+        // ゲーム終了後，一定時間たったか判別
         if (count == 160)
 
-            //修了の効果音を流したか判別
+            // 終了の効果音を流したか判別
             if (isEndSE == true)
             {
                 isEndSE = false;
@@ -209,5 +209,4 @@ public class GameDirector : MonoBehaviour
     {
         SceneManager.LoadScene(Constans.TITLE_SCENE);
     }
-
 }
