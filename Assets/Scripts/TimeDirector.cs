@@ -112,7 +112,7 @@ public class TimeDirector : MonoBehaviour
         }
 
         // ゲーム終了後，一定時間たったか判別
-        if (count == 100)
+        if (count == 150)
 
             // 終了の効果音を流したか判別
             if (isEndSE == true)
