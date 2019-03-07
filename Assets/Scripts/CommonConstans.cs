@@ -21,7 +21,7 @@ namespace CommonConstans
     }
 
     // シーン名
-    public static class TitleName
+    public static class SceneName
     {
         /// <summary>タイトルシーン名</summary>
         public static string TITLE_SCENE = "TitleScene";

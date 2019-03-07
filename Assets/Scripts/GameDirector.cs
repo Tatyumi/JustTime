@@ -10,7 +10,7 @@ public class GameDirector : MonoBehaviour
     /// </summary>
     public void MoveGameScene()
     {
-        SceneManager.LoadScene(TitleName.GAME_SCENE);
+        SceneManager.LoadScene(SceneName.GAME_SCENE);
     }
 
     /// <summary>
@@ -18,6 +18,6 @@ public class GameDirector : MonoBehaviour
     /// </summary>
     public void MoveTitleScene()
     {
-        SceneManager.LoadScene(TitleName.TITLE_SCENE);
+        SceneManager.LoadScene(SceneName.TITLE_SCENE);
     }
 }

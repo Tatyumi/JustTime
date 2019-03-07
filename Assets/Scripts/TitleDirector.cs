@@ -12,7 +12,7 @@ public class TitleDirector : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             // ゲームシーンに移動
-            SceneManager.LoadScene(TitleName.GAME_SCENE);
+            SceneManager.LoadScene(SceneName.GAME_SCENE);
         }
     }
 }
