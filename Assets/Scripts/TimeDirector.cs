@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System;
-using Common;
+using CommonConstans;
 
 public class TimeDirector : MonoBehaviour
 {
@@ -118,7 +118,7 @@ public class TimeDirector : MonoBehaviour
             if (isEndSE == true)
             {
                 isEndSE = false;
-                audioManager.PlaySE(Constans.CONTINUE_PANEL_SE);
+                audioManager.PlaySE(SoundName.CONTINUE_PANEL_SE);
                 CountinuePanel.SetActive(true);
             }
     }
@@ -129,8 +129,8 @@ public class TimeDirector : MonoBehaviour
     public void StartClock()
     {
         // 計測開始SEを再生
-        audioManager.PlaySE(Constans.START_BUTTON_SE);
-        audioManager.PlaySE(Constans.CLOCK_SE);
+        audioManager.PlaySE(SoundName.START_BUTTON_SE);
+        audioManager.PlaySE(SoundName.CLOCK_SE);
 
         // ゲーム開始時間の取得
         PushTime = Time.time;
@@ -151,7 +151,7 @@ public class TimeDirector : MonoBehaviour
         if (p == 1 && isTapP1 == false)
         {
             // 計測停止SEを再生
-            audioManager.PlaySE(Constans.STOP_BUTTON_SE);
+            audioManager.PlaySE(SoundName.STOP_BUTTON_SE);
 
             // プレイヤー1が計測終了したことを表示
             StopTime1Text.enabled = true;
@@ -165,7 +165,7 @@ public class TimeDirector : MonoBehaviour
         else if (p == 2 && isTapP2 == false)
         {
             // 計測停止SEを再生
-            audioManager.PlaySE(Constans.STOP_BUTTON_SE);
+            audioManager.PlaySE(SoundName.STOP_BUTTON_SE);
 
             // プレイヤー2が計測終了したことを表示
             StopTime2Text.enabled = true;
@@ -183,7 +183,7 @@ public class TimeDirector : MonoBehaviour
     public void Judge()
     {
         // ゲーム終了Seを再生
-        audioManager.PlaySE(Constans.GAME_SET_SE);
+        audioManager.PlaySE(SoundName.GAME_SET_SE);
 
         // 両プレイヤーの計測時間を表示
         StopTime1Text.text = StopTimeP1.ToString("f2");

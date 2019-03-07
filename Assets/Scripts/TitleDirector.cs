@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using Common;
+using CommonConstans;
 
 public class TitleDirector : MonoBehaviour
 {
@@ -12,7 +12,7 @@ public class TitleDirector : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             // ゲームシーンに移動
-            SceneManager.LoadScene(Constans.GAME_SCENE);
+            SceneManager.LoadScene(TitleName.GAME_SCENE);
         }
     }
 }

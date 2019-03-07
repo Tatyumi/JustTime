@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Common
+namespace CommonConstans
 {
-    // 定数クラス
-    public static class Constans
+    // サウンド名
+    public static class SoundName
     {
         /// <summary>秒針の音声ファイル名</summary>
         public const string CLOCK_SE = "ClockSE";
@@ -18,6 +18,11 @@ namespace Common
         /// <summary>停止ボタンプッシュ音の音声ファイル名</summary>
         public static string STOP_BUTTON_SE = "StopButtonSE";
 
+    }
+
+    // シーン名
+    public static class TitleName
+    {
         /// <summary>タイトルシーン名</summary>
         public static string TITLE_SCENE = "TitleScene";
         /// <summary>ゲームシーン名</summary>

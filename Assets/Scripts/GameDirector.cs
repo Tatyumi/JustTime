@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using Common;
+using CommonConstans;
 
 public class GameDirector : MonoBehaviour
 {
@@ -10,7 +10,7 @@ public class GameDirector : MonoBehaviour
     /// </summary>
     public void MoveGameScene()
     {
-        SceneManager.LoadScene(Constans.GAME_SCENE);
+        SceneManager.LoadScene(TitleName.GAME_SCENE);
     }
 
     /// <summary>
@@ -18,6 +18,6 @@ public class GameDirector : MonoBehaviour
     /// </summary>
     public void MoveTitleScene()
     {
-        SceneManager.LoadScene(Constans.TITLE_SCENE);
+        SceneManager.LoadScene(TitleName.TITLE_SCENE);
     }
 }
