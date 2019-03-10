@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace CommonConstans
+namespace Common
 {
     // サウンド名
     public static class SoundName

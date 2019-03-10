@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System;
-using CommonConstans;
+using Common;
 
 public class TimeDirector : MonoBehaviour
 {

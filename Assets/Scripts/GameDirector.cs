@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using CommonConstans;
+using Common;
 
 public class GameDirector : MonoBehaviour
 {
